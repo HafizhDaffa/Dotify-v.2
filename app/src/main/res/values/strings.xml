@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Dotify-2</string>
+    <string name="paragraf1">Masih ramai dikalangan kita menghadapi masalah untuk bangun awal pagi.
+        Ramai yang mengadu bahawa mereka tidak sedar walaupun penggera sudah disetkan pada tahap bunyi yang paling tinggi.
+    </string>
+    <string name="paragraf2"> 1. Elakkan pengambilan kopi selepas jam 2 petang Hanya minum kopi kegemaran anda diwaktu pagi.
+        Pengambilan kafein akan menggangu proses tidur sehingga lebih daripada enam jam selepas anda meminumnya, walaupun anda tidak
+        terperasan perkara ini. Untuk menghadkan kebarangkalian gangguan terhadap tidur, maka hadkan pengambilan minuman berkafein selepas jam 2 petang.
+    </string>
+    <string name="paragraf3">2. Tetapkan penggera waktu untuk tidur\tBangun awal pagi memanglah sukar, namun apa yang lebih teruk lagi adalah apabila anda tidak
+        tidur pada waktu yang sepatutnya. Jangan melengahkan tidur.Untuk bangun awal, waktu tidur juga mesti awal.
+        Cara terbaik adalah tetapkan penggera setengah jam sebelum waktu tidur untuk mengingatkan diri kita bahawa sudah sampai masa untuk merehatkan diri."
+    </string>
+    <string name="paragraf4">3. Amalkan rutin sebelum tidur Setiap malam, pada waktu yang sama, mulakan untuk berus gigi, memakai pakaian tidur, mandi dan membaca
+        sedikit surah dan doa tidur. Dengan memastikan rutin sebelum tidur dibuat pada waktu yang sama setiap malam, ia akan membantu otak kita mengenalpasti
+        waktu untuk bertukar ke fasa tidur.</string>
+    <string name="paragraf5">4. Mematikan semua peralatan elektronik Matikan semua peralatan elektronik anda seperti komputer dan telefon pintar sekurang-kurangnya
+        setengah jam sebelum waktu tidur. Kenapa ini penting? Kerana gelombang cahaya biru dari alat elektronik yang masuk melalui mata akan mengganggu penghasilan
+        melatonin, iaitu sejenis hormon yang mengarahkan badan kita untuk tidur.</string>
+</resources>

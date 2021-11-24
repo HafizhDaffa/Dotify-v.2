@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/hafiz/AndroidStudioProjects/Dotify2/app/src/main/res/layout/activity_halaman_utama.xml" value="0.34375" />
+        <entry key="..\:/Users/hafiz/AndroidStudioProjects/Dotify2/app/src/main/res/layout/activity_main.xml" value="0.3578125" />
+        <entry key="..\:/Users/hafiz/AndroidStudioProjects/Dotify2/app/src/main/res/layout/activity_main2.xml" value="0.19947916666666668" />
+        <entry key="..\:/Users/hafiz/AndroidStudioProjects/Dotify2/app/src/main/res/layout/activity_pengingat.xml" value="0.3578125" />
+        <entry key="..\:/Users/hafiz/AndroidStudioProjects/Dotify2/app/src/main/res/layout/activity_pengingat_saya.xml" value="0.3578125" />
+        <entry key="..\:/Users/hafiz/AndroidStudioProjects/Dotify2/app/src/main/res/layout/activity_tambah_pengingat.xml" value="0.2611683848797251" />
+        <entry key="..\:/Users/hafiz/AndroidStudioProjects/Dotify2/app/src/main/res/layout/activity_tips.xml" value="0.3625" />
+        <entry key="..\:/Users/hafiz/AndroidStudioProjects/Dotify2/app/src/main/res/layout/activity_tips_2.xml" value="0.3625" />
+        <entry key="..\:/Users/hafiz/AndroidStudioProjects/Dotify2/app/src/main/res/layout/activity_ubah_pengingat.xml" value="0.3578125" />
+        <entry key="..\:/Users/hafiz/AndroidStudioProjects/Dotify2/app/src/main/res/layout/pengingat.xml" value="0.3578125" />
+        <entry key="..\:/Users/hafiz/AndroidStudioProjects/Dotify2/app/src/main/res/layout/tips.xml" value="0.33" />
+        <entry key="..\:/Users/hafiz/AndroidStudioProjects/Dotify2/app/src/main/res/menu/bottom_nav.xml" value="0.3625" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

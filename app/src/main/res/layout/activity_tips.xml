@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/putih"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Tips"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/kembali"
+                android:layout_width="48dp"
+                android:layout_height="51.55dp"
+                android:layout_marginStart="17dp"
+                android:background="@drawable/rounded_back_button"
+                android:padding="12dp"
+                android:layout_marginTop="35dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tips dan Trik"
+            android:fontFamily="@font/worksans_semibold"
+            android:textSize="34sp"
+            android:textColor="@color/hitam"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="320dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="20dp"
+            android:textAlignment="inherit"
+            android:id="@+id/artikel1"
+            app:cornerRadius="15dp"
+            android:backgroundTint="@color/biru_muda"
+            android:text="7 Cara agar bisa bangun pagi"
+            android:textAllCaps="false"
+            android:fontFamily="@font/worksans_semibold"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/hitam"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="320dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="20dp"
+            android:textAlignment="inherit"
+            android:id="@+id/artikel2"
+            app:cornerRadius="15dp"
+            android:backgroundTint="@color/biru_muda"
+            android:text="8 Cara Atur Waktu Versi Bill Gates"
+            android:textAllCaps="false"
+            android:fontFamily="@font/worksans_semibold"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/hitam"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="320dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="20dp"
+            android:textAlignment="inherit"
+            android:id="@+id/artikel3"
+            app:cornerRadius="15dp"
+            android:backgroundTint="@color/biru_muda"
+            android:text="9 Cara Atur Waktu Versi Budi"
+            android:textAllCaps="false"
+            android:fontFamily="@font/worksans_semibold"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/hitam"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="320dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="20dp"
+            android:textAlignment="inherit"
+            android:id="@+id/artikel4"
+            app:cornerRadius="15dp"
+            android:backgroundTint="@color/biru_muda"
+            android:text="Hilangkan Malas Begini Triknya"
+            android:textAllCaps="false"
+            android:fontFamily="@font/worksans_semibold"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/hitam"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="320dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="20dp"
+            android:textAlignment="inherit"
+            android:id="@+id/artikel5"
+            app:cornerRadius="15dp"
+            android:backgroundTint="@color/biru_muda"
+            android:text="Cara menghilangkan rasa bosan"
+            android:textAllCaps="false"
+            android:fontFamily="@font/worksans_semibold"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/hitam"/>
+
+       <!-- <com.google.android.material.button.MaterialButton
+            android:layout_width="320dp"
+            android:layout_height="88dp"
+            android:layout_marginTop="20dp"
+            android:textAlignment="inherit"
+            android:id="@+id/artikel6"
+            app:cornerRadius="15dp"
+            android:backgroundTint="@color/biru_muda"
+            android:text="Tips menenangkan pikiran"
+            android:textAllCaps="false"
+            android:fontFamily="@font/worksans_semibold"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/hitam"/>-->
+
+
+      <!--  <androidx.cardview.widget.CardView
+            android:id="@+id/cardTrik2"
+            android:layout_width="320dp"
+            android:layout_height="88dp"
+            android:backgroundTint="@color/biru_muda"
+            android:layout_marginTop="40dp"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintStart_toStartOf="parent" >
+
+            <TextView
+            android:id="@+id/judul1"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/worksans_semibold"
+            android:text="8 Cara Atur Waktu Versi Bill Gates"
+            android:textColor="@color/hitam"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        </androidx.cardview.widget.CardView>-->
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="56sp"
+            android:background="@color/biru_paling_tua"
+            app:itemIconTint="@color/putih"
+            app:labelVisibilityMode="unlabeled"
+            app:menu="@menu/bottom_nav" />
+</LinearLayout>
