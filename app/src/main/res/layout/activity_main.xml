@@ -35,4 +35,22 @@
         android:layout_height="wrap_content"
         android:text="Tips dan Trik"
         android:id="@+id/TipsDanTrik"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jadwal Saya"
+        android:id="@+id/jadwal_saya"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tambah Jadwal"
+        android:id="@+id/tambah_jadwal"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ubah Jadwal"
+        android:id="@+id/ubah_jadwal"/>
+
 </LinearLayout>

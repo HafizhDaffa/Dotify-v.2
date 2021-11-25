@@ -26,4 +26,6 @@ object CeritanyaDatabase {
         Jadwal(Date(2021, 11, 30, 18, 10), "Tugas RPL 2", "Tugasnya susah banget"),
         Jadwal(Date(2022, 1, 25, 20, 20), "Tugas JST 2", "Tugasnya ribet banget")
     )
+
+
 }

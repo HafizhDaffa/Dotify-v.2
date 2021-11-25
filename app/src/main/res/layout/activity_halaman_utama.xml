@@ -17,10 +17,10 @@
     <com.google.android.material.button.MaterialButton
         android:layout_width="349dp"
         android:layout_height="69dp"
-        android:id="@+id/jadwal_saya"
         app:cornerRadius="100dp"
         android:backgroundTint="@color/biru_tengah_kedua"
         android:text="Jadwal Saya"
+        android:id="@+id/jadwal_saya"
         android:textAllCaps="false"
         android:fontFamily="@font/worksans_semibold"
         android:textSize="30sp"

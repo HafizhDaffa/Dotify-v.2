@@ -33,12 +33,12 @@ class AdapterPengingat (val ListPengingat: ArrayList<Pengingat>) : RecyclerView.
             context.startActivity(intent)
         }
 
-        if (!pengingat.isFirst) {
-            holder.tanggal.visibility = View.GONE
-            holder.top.visibility = View.GONE
-        } else {
-            holder.top.visibility = View.INVISIBLE
-        }
+//        if (!pengingat.isFirst) {
+//            holder.tanggal.visibility = View.GONE
+//            holder.top.visibility = View.GONE
+//        } else {
+//            holder.top.visibility = View.INVISIBLE
+//        }
         Log.i("size", listPengingat.size.toString())
         Log.i("adapter", position.toString())
 

@@ -4,9 +4,10 @@ import java.util.*
 
 data class Pengingat(
     var date: Date,
-    var judul: String,
+    var judul: String = "",
 
-) {
+    )
+{
     var isFirst: Boolean
     var tanggal = ""
     var jam = ""

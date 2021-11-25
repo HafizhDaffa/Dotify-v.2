@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dotify2">
         <activity
+            android:name="com.example.dotify_2.JadwalSaya"
+            android:exported="true" />
+        <activity
+            android:name="com.example.dotify_2.UbahJadwal"
+            android:exported="true" />
+        <activity
+            android:name="com.example.dotify_2.TambahJadwal"
+            android:exported="true" />
+        <activity
             android:name="com.example.dotify_2.HalamanUtama"
             android:exported="true" />
         <activity
