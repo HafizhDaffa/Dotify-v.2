@@ -15,6 +15,7 @@ val TABLE_NAME = "pengingat"
 val COL_JUDUL = "judul"
 val COL_TANGGAL = "tanggal"
 val COL_JAM = "jam"
+val ID = "id"
 
 var day = 0
 var month = 0
@@ -32,6 +33,7 @@ class DatabaseHandler(var context: Context) :
     SQLiteOpenHelper(context, DATABASE_NAME, null, DATABASE_VERSION) {
     override fun onCreate(db: SQLiteDatabase?) {
         val createTable = "CREATE TABLE " + TABLE_NAME + " (" +
+                ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COL_JUDUL + " TEXT, " +
                 COL_TANGGAL + " TEXT, " +
                 COL_JAM + " TEXT" + ");"
@@ -62,6 +64,19 @@ class DatabaseHandler(var context: Context) :
     fun getPengingat(): Cursor {
         val db = this.writableDatabase
         return db!!.rawQuery("SELECT * FROM " + TABLE_NAME, null)
+    }
+
+    fun updatePengingat(pengingat: Pengingat): Int {
+        val db = this.writableDatabase
+        val cv = ContentValues()
+
+        cv.put(COL_JUDUL, pengingat.judul)
+        cv.put(COL_TANGGAL, pengingat.tgl)
+        cv.put(COL_JAM, pengingat.jam)
+
+        val result = db.update(TABLE_NAME, cv, "id=" +  pengingat.id, null)
+        db.close()
+        return result
     }
 
 }

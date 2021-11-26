@@ -33,17 +33,7 @@ class TambahPengingat: AppCompatActivity(){
     var intMYear: Int = 0
     var intMHour: Int = 0
     var intMMinutes: Int = 0
-    var day = 0
-    var month = 0
-    var year = 0
-    var hour = 0
-    var minute = 0
 
-    var savedDay = 0
-    var savedMonth = 0
-    var savedYear = 0
-    var savedHour = 0
-    var savedMinute = 0
 
     var tanggal: String = ""
     var jam: String = ""
@@ -59,8 +49,8 @@ class TambahPengingat: AppCompatActivity(){
         val year = cal.get(Calendar.YEAR)
         val month = cal.get(Calendar.MONTH)
         val day = cal.get(Calendar.DAY_OF_MONTH)
-        var hour = cal.get(Calendar.HOUR)
-        var minute = cal.get(Calendar.MINUTE)
+        val hour = cal.get(Calendar.HOUR)
+        val minute = cal.get(Calendar.MINUTE)
         setFullScreen(window)
         lightStatusBar(window)
 
@@ -97,14 +87,21 @@ class TambahPengingat: AppCompatActivity(){
 
         findViewById<MaterialButton>(R.id.btn_timePicker2).setOnClickListener{
             val cal = Calendar.getInstance()
+
             val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
                 cal.set(Calendar.HOUR_OF_DAY, hour)
                 cal.set(Calendar.MINUTE, minute)
                 btn_timePicker2.text = SimpleDateFormat("HH:mm").format(cal.time)
+
             }
+
+
+
             intMHour = Calendar.HOUR_OF_DAY
             intMMinutes = Calendar.MINUTE
-            jam = "$intMHour-$intMMinutes"
+
+
+            jam = "$intMHour : $intMMinutes"
             TimePickerDialog(this, timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
 
 
@@ -126,59 +123,15 @@ class TambahPengingat: AppCompatActivity(){
                 val intent = Intent(this, PengingatSaya::class.java)
                 startActivity(intent)
             }
-
-
         }
-
-
 
         findViewById<ImageButton>(R.id.kembali).setOnClickListener {
             val intent = Intent(this, PengingatSaya::class.java)
             startActivity(intent)
         }
-
-
     }
 
 
-
-
-//    private fun getDateTimeCalendar(){
-//        val cal : Calendar = Calendar.getInstance()
-//        val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
-//        day = cal.get(Calendar.DAY_OF_MONTH)
-//        month = cal.get(Calendar.MONTH)
-//        year = cal.get(Calendar.YEAR)
-//        hour = cal.get(Calendar.HOUR)
-//        minute = cal.get(Calendar.MINUTE)
-//        dateFormat.format(cal)
-//    }
-
-//    private fun pickDate(){
-//        findViewById<MaterialButton>(R.id.btn_timePicker).setOnClickListener {
-//            getDateTimeCalendar()
-//
-//            DatePickerDialog(this, this, year, month, day).show()
-//        }
-//    }
-//    override fun onDateSet(p0: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
-//        savedDay = dayOfMonth
-//        savedMonth = month
-//        savedYear = year
-//
-//        getDateTimeCalendar()
-//        TimePickerDialog(this, this, hour, minute, true).show()
-//
-//    }
-
-//    override fun onTimeSet(p0: TimePicker?, hourOfDay: Int, minute: Int) {
-//        savedHour = hourOfDay
-//        savedMinute = minute
-//
-//        findViewById<MaterialButton>(R.id.btn_timePicker).text = "$savedDay-$savedMonth-$savedYear"
-//        findViewById<MaterialButton>(R.id.btn_timePicker2).text = "$savedHour:$savedMinute"
-//
-//    }
 fun checkAllField(): Boolean {
 
     if (TextUtils.isEmpty(judul.text)) {
@@ -205,8 +158,5 @@ fun checkAllField(): Boolean {
         ).years
     }
 
-//    @RequiresApi(Build.VERSION_CODES.O)
-//    fun getJam(): Int {
-//        return
-//    }
+
 }

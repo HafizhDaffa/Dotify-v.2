@@ -1,5 +1,6 @@
 package com.example.dotify_2
 
+
 import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
@@ -21,7 +22,7 @@ class AdapterPengingat (val ListPengingat: ArrayList<Pengingat>) : RecyclerView.
     }
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
-        val pengingat = listPengingat[position]
+        val pengingat = ListPengingat[position]
 
         holder.tanggal.text = pengingat.tgl
         holder.judul.text = pengingat.judul
@@ -39,22 +40,19 @@ class AdapterPengingat (val ListPengingat: ArrayList<Pengingat>) : RecyclerView.
 //        } else {
 //            holder.top.visibility = View.INVISIBLE
 //        }
-        Log.i("size", listPengingat.size.toString())
+        Log.i("size", ListPengingat.size.toString())
         Log.i("adapter", position.toString())
 
     }
 
     override fun getItemCount(): Int {
-        return listPengingat.size
+        return ListPengingat.size
     }
 
     inner class Holder(view: View) : RecyclerView.ViewHolder(view) {
         var tanggal: TextView = view.findViewById(R.id.tanggal)
         var judul: TextView = view.findViewById(R.id.judul)
-        var catatan: TextView = view.findViewById(R.id.catatan)
         var jam: TextView = view.findViewById(R.id.jam)
-        var card: CardView = view.findViewById(R.id.card)
-        var top: TextView = view.findViewById(R.id.top)
         var note: ImageView = view.findViewById(R.id.note)
     }
 }

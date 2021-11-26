@@ -18,10 +18,13 @@
         <entry key="..\:/kuliah/sem 5/psi/tugas/project_1/app/src/main/res/layout/activity_halaman_utama.xml" value="0.12708333333333333" />
         <entry key="..\:/kuliah/sem 5/psi/tugas/project_1/app/src/main/res/layout/activity_jadwal_saya.xml" value="0.1" />
         <entry key="..\:/kuliah/sem 5/psi/tugas/project_1/app/src/main/res/layout/activity_main.xml" value="0.12708333333333333" />
+        <entry key="..\:/kuliah/sem 5/psi/tugas/project_1/app/src/main/res/layout/activity_pengingat_saya.xml" value="0.1373825018076645" />
         <entry key="..\:/kuliah/sem 5/psi/tugas/project_1/app/src/main/res/layout/activity_tambah_jadwal.xml" value="0.1" />
         <entry key="..\:/kuliah/sem 5/psi/tugas/project_1/app/src/main/res/layout/activity_tambah_pengingat.xml" value="0.25" />
         <entry key="..\:/kuliah/sem 5/psi/tugas/project_1/app/src/main/res/layout/activity_ubah_jadwal.xml" value="0.1" />
+        <entry key="..\:/kuliah/sem 5/psi/tugas/project_1/app/src/main/res/layout/activity_ubah_pengingat.xml" value="0.4" />
         <entry key="..\:/kuliah/sem 5/psi/tugas/project_1/app/src/main/res/layout/jadwal.xml" value="0.1" />
+        <entry key="..\:/kuliah/sem 5/psi/tugas/project_1/app/src/main/res/layout/pengingat.xml" value="0.536" />
       </map>
     </option>
   </component>
