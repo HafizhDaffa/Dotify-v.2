@@ -1,6 +1,7 @@
 package com.example.dotify_2
 
 
+import android.content.Context
 import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,14 +11,16 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat.startActivity
+import androidx.core.content.contentValuesOf
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dotify_2.CeritanyaDatabase.listPengingat
 import com.google.android.material.button.MaterialButton
 
-class AdapterPengingat (val ListPengingat: ArrayList<Pengingat>) : RecyclerView.Adapter<AdapterPengingat.Holder>() {
+class AdapterPengingat (val ListPengingat: ArrayList<Pengingat>, val context: Context) : RecyclerView.Adapter<AdapterPengingat.Holder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.pengingat, parent, false)
+
         return Holder(view)
     }
 
@@ -31,15 +34,18 @@ class AdapterPengingat (val ListPengingat: ArrayList<Pengingat>) : RecyclerView.
         holder.note.setOnClickListener {
             val context = holder.judul.context
             val intent = Intent(context, UbahPengingat::class.java)
+            intent.putExtra("id", pengingat.id)
+            Log.i("id", pengingat.id.toString())
             context.startActivity(intent)
         }
 
-//        if (!pengingat.isFirst) {
-//            holder.tanggal.visibility = View.GONE
-//            holder.top.visibility = View.GONE
-//        } else {
-//            holder.top.visibility = View.INVISIBLE
-//        }
+        holder.trash.setOnClickListener{
+            val db = DatabaseHandler(context)
+            db.deletePengingat(pengingat.id!!)
+            ListPengingat.removeAt(position)
+            notifyDataSetChanged()
+        }
+
         Log.i("size", ListPengingat.size.toString())
         Log.i("adapter", position.toString())
 
@@ -54,5 +60,6 @@ class AdapterPengingat (val ListPengingat: ArrayList<Pengingat>) : RecyclerView.
         var judul: TextView = view.findViewById(R.id.judul)
         var jam: TextView = view.findViewById(R.id.jam)
         var note: ImageView = view.findViewById(R.id.note)
+        var trash: ImageView = view.findViewById(R.id.trash)
     }
 }

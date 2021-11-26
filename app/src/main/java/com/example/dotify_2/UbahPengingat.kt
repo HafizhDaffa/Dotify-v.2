@@ -7,6 +7,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -42,8 +43,11 @@ class UbahPengingat:AppCompatActivity() {
     @SuppressLint("RestrictedApi")
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ubah_pengingat)
+
+        var dapatID = getIntent().getIntExtra("id",0)
 
         var formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy")
         val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
@@ -86,7 +90,9 @@ class UbahPengingat:AppCompatActivity() {
             dpd.show()
         }
 
-        findViewById<MaterialButton>(R.id.btn_timePicker2).setOnClickListener{
+
+
+       findViewById<MaterialButton>(R.id.btn_timePicker2).setOnClickListener{
             val cal = Calendar.getInstance()
 
             val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
@@ -95,12 +101,8 @@ class UbahPengingat:AppCompatActivity() {
                 btn_timePicker2.text = SimpleDateFormat("HH:mm").format(cal.time)
 
             }
-
-
-
             intMHour = Calendar.HOUR_OF_DAY
             intMMinutes = Calendar.MINUTE
-
 
             jam = "$intMHour : $intMMinutes"
             TimePickerDialog(this, timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
@@ -112,7 +114,20 @@ class UbahPengingat:AppCompatActivity() {
 
 
         findViewById<MaterialButton>(R.id.simpan).setOnClickListener {
+            if (checkAllField()) {
 
+                myDB.updatePengingat(
+                    Pengingat(
+                        judul.text.toString(),
+                        tanggal,
+                        jam,
+                        dapatID
+                    )
+                )
+
+                val intent = Intent(this, PengingatSaya::class.java)
+                startActivity(intent)
+            }
 
             val intent = Intent(this, PengingatSaya::class.java)
             startActivity(intent)

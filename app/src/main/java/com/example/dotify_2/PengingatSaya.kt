@@ -31,7 +31,7 @@ class PengingatSaya : AppCompatActivity() {
         setFullScreen(window)
         lightStatusBar(window)
         while(cursor.moveToNext()){
-            list.add(Pengingat(cursor.getString(1),cursor.getString(2), cursor.getString(3)))
+            list.add(Pengingat(cursor.getString(1),cursor.getString(2), cursor.getString(3), cursor.getInt(0)))
             Log.i("cursor", cursor.getString(1))
         }
         findViewById<MaterialButton>(R.id.tambah_pengingat).setOnClickListener {
@@ -62,7 +62,7 @@ class PengingatSaya : AppCompatActivity() {
         recyclerView = findViewById(R.id.recycler_view)
 
         recyclerView.layoutManager = LinearLayoutManager(this)
-        val adapter = AdapterPengingat(list)
+        val adapter = AdapterPengingat(list, this)
         recyclerView.adapter = adapter
     }
 }

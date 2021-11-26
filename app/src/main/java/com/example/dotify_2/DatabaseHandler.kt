@@ -74,9 +74,14 @@ class DatabaseHandler(var context: Context) :
         cv.put(COL_TANGGAL, pengingat.tgl)
         cv.put(COL_JAM, pengingat.jam)
 
-        val result = db.update(TABLE_NAME, cv, "id=" +  pengingat.id, null)
+        val result = db.update(TABLE_NAME, cv, "id=" + pengingat.id, null)
         db.close()
         return result
+    }
+
+    fun deletePengingat(id: Int) {
+        val db = this.writableDatabase
+        db.delete(TABLE_NAME, ID + " = " + id, null)
     }
 
 }

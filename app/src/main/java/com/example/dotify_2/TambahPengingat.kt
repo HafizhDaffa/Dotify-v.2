@@ -1,6 +1,5 @@
 package com.example.dotify_2
 
-import android.view.ViewGroup
 import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
@@ -8,24 +7,19 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.text.TextUtils
-import android.view.View
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
-import java.time.Year
 import java.util.*
 import kotlinx.android.synthetic.main.activity_tambah_pengingat.*
-import java.lang.Exception
 import java.time.format.DateTimeFormatter
 import java.text.SimpleDateFormat
 import java.time.LocalDate
-import java.time.LocalTime
 import java.time.Period
-import kotlin.math.roundToInt
 
 //, DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener
-class TambahPengingat: AppCompatActivity(){
+class TambahPengingat : AppCompatActivity() {
     var cal = Calendar.getInstance()
     lateinit var judul: TextView
     var intMDay: Int = 0
@@ -38,6 +32,7 @@ class TambahPengingat: AppCompatActivity(){
     var tanggal: String = ""
     var jam: String = ""
     val myDB = DatabaseHandler(this)
+
     @SuppressLint("RestrictedApi")
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,7 +49,7 @@ class TambahPengingat: AppCompatActivity(){
         setFullScreen(window)
         lightStatusBar(window)
 
-        findViewById<MaterialButton>(R.id.btn_timePicker).setOnClickListener{
+        findViewById<MaterialButton>(R.id.btn_timePicker).setOnClickListener {
             val dpd = DatePickerDialog(
                 this,
                 DatePickerDialog.OnDateSetListener { view, mYear, mMonth, mDay ->
@@ -85,7 +80,7 @@ class TambahPengingat: AppCompatActivity(){
             dpd.show()
         }
 
-        findViewById<MaterialButton>(R.id.btn_timePicker2).setOnClickListener{
+        findViewById<MaterialButton>(R.id.btn_timePicker2).setOnClickListener {
             val cal = Calendar.getInstance()
 
             val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
@@ -93,18 +88,28 @@ class TambahPengingat: AppCompatActivity(){
                 cal.set(Calendar.MINUTE, minute)
                 btn_timePicker2.text = SimpleDateFormat("HH:mm").format(cal.time)
 
+                var strMHour = hour.toString()
+                var strMMinutes = minute.toString()
+
+                if (hour < 10) {
+                    strMHour = "0" + strMHour
+                }
+
+                if (minute < 10) {
+                    strMMinutes = "0" + strMMinutes
+                }
+
+                jam = "$strMHour:$strMMinutes"
             }
 
 
-
-            intMHour = Calendar.HOUR_OF_DAY
-            intMMinutes = Calendar.MINUTE
-
-
-            jam = "$intMHour : $intMMinutes"
-            TimePickerDialog(this, timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
-
-
+            TimePickerDialog(
+                this,
+                timeSetListener,
+                cal.get(Calendar.HOUR_OF_DAY),
+                cal.get(Calendar.MINUTE),
+                true
+            ).show()
         }
 
         judul = findViewById<EditText>(R.id.NamaTugas)
@@ -132,24 +137,25 @@ class TambahPengingat: AppCompatActivity(){
     }
 
 
-fun checkAllField(): Boolean {
+    fun checkAllField(): Boolean {
 
-    if (TextUtils.isEmpty(judul.text)) {
-        Toast.makeText(this, "Masukkan Judul", Toast.LENGTH_LONG).show()
-        return false
+        if (TextUtils.isEmpty(judul.text)) {
+            Toast.makeText(this, "Masukkan Judul", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        if (TextUtils.isEmpty(tanggal)) {
+            Toast.makeText(this, "Masukkan Tanggal", Toast.LENGTH_LONG).show()
+            return false
+        }
+        if (TextUtils.isEmpty(jam)) {
+            Toast.makeText(this, "Masukkan Jam", Toast.LENGTH_LONG).show()
+            return false
+        }
+
+        return true
     }
 
-    if (TextUtils.isEmpty(tanggal)) {
-        Toast.makeText(this, "Masukkan Tanggal", Toast.LENGTH_LONG).show()
-        return false
-    }
-    if (TextUtils.isEmpty(jam)) {
-        Toast.makeText(this, "Masukkan Jam", Toast.LENGTH_LONG).show()
-        return false
-    }
-
-    return true
-}
     @RequiresApi(Build.VERSION_CODES.O)
     fun getTanggal(): Int {
         return Period.between(
