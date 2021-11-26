@@ -23,7 +23,7 @@ class AdapterPengingat (val ListPengingat: ArrayList<Pengingat>) : RecyclerView.
     override fun onBindViewHolder(holder: Holder, position: Int) {
         val pengingat = listPengingat[position]
 
-        holder.tanggal.text = pengingat.tanggal
+        holder.tanggal.text = pengingat.tgl
         holder.judul.text = pengingat.judul
         holder.jam.text = pengingat.jam
 

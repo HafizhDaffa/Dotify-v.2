@@ -31,10 +31,10 @@ class PengingatSaya : AppCompatActivity() {
         }
 
         list.addAll(CeritanyaDatabase.listPengingat)
-        list.sortWith(compareBy({it.tanggal.reversed()}, {it.jam}))
+        list.sortWith(compareBy({ it.tgl?.reversed() }, {it.jam}))
         for (i in list.indices) {
             if (i < list.size-1) {
-                if (list[i].tanggal == list[i+1].tanggal){}
+                if (list[i].tgl == list[i+1].tgl){}
 //                    list[i+1].isFirst = false
             }
         }
