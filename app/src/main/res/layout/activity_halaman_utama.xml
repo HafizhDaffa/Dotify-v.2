@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,69 +8,95 @@
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="parent"
+        app:menu="@menu/bottom_nav"
+        android:background="@color/biru_tengah_kedua"
+        app:itemIconTint="@color/white"
+        app:labelVisibilityMode="unlabeled" />
+
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="238dp"
         android:layout_marginBottom="73dp"
-        android:src="@drawable/logo"/>
+        android:src="@drawable/logo"
+        tools:ignore="MissingConstraints" />
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/jadwal_saya"
         android:layout_width="349dp"
         android:layout_height="69dp"
-        app:cornerRadius="100dp"
         android:backgroundTint="@color/biru_tengah_kedua"
         android:text="Jadwal Saya"
-        android:id="@+id/jadwal_saya"
         android:textAllCaps="false"
-        android:fontFamily="@font/worksans_semibold"
+        android:textColor="@color/biru_muda"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:textColor="@color/biru_muda"/>
+        app:cornerRadius="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.412"
+        tools:ignore="MissingConstraints"
+        android:fontFamily="@font/worksans_semibold"
+      />
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/pengingat_saya"
         android:layout_width="349dp"
         android:layout_height="69dp"
-        android:id="@+id/pengingat_saya"
-        app:cornerRadius="100dp"
         android:backgroundTint="@color/biru_tengah_kedua"
-        android:layout_marginVertical="48dp"
         android:text="Pengingat"
         android:textAllCaps="false"
-        android:fontFamily="@font/worksans_semibold"
+        android:textColor="@color/biru_muda"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:textColor="@color/biru_muda"/>
+        app:cornerRadius="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.561"
+        tools:ignore="MissingConstraints"
+        android:fontFamily="@font/worksans_semibold"
+       />
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/TipsDanTrik"
         android:layout_width="349dp"
         android:layout_height="69dp"
-        android:id="@+id/TipsDanTrik"
-        app:cornerRadius="100dp"
         android:backgroundTint="@color/biru_tengah_kedua"
         android:text="Tips dan Trik"
         android:textAllCaps="false"
-        android:fontFamily="@font/worksans_semibold"
+        android:textColor="@color/biru_muda"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:textColor="@color/biru_muda"/>
+        app:cornerRadius="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.703"
+        tools:ignore="MissingConstraints"
+        android:fontFamily="@font/worksans_semibold"
+      />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <TextView
         android:layout_width="wrap_content"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="124dp"
+        android:fontFamily="@font/poetsenone_regular"
+        android:text="Dotify"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:text="Dotify"
-            android:fontFamily="@font/poetsenone_regular"
-            android:textSize="48sp"
-            android:layout_marginBottom="54dp"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

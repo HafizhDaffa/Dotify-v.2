@@ -62,14 +62,32 @@
             android:textSize="17sp"
             android:textColor="@color/putih"/>
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
+        <!--<com.google.android.material.bottomnavigation.BottomNavigationView
             android:layout_width="match_parent"
-            android:layout_height="56sp"
-            android:background="@color/biru_paling_tua"
-            app:itemIconTint="@color/putih"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="30dp"
+            android:elevation="20dp"
+            app:menu="@menu/bottom_nav"
+            android:background="@drawable/round_corner"
+            app:itemRippleColor="@android:color/transparent"
             app:labelVisibilityMode="unlabeled"
-            app:menu="@menu/bottom_nav" />
+            app:itemIconTint="@drawable/item_selector" />-->
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:menu="@menu/bottom_nav"
+            android:background="@color/biru_tengah_kedua"
+            app:itemIconTint="@color/white"
+            app:labelVisibilityMode="unlabeled" />
 
     </LinearLayout>
+
+
 
 </ScrollView>

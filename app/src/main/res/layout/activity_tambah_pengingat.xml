@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/biru_muda"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".TambahPengingat"
     tools:menu="@menu/bottom_nav">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@color/biru_muda">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -93,6 +99,20 @@
         android:textColor="@color/black"
         android:textSize="20sp" />
 
+    <!--<EditText
+        android:layout_width="310dp"
+        android:layout_height="48dp"
+        android:id="@+id/Jam"
+        android:background="@drawable/rounded_edit_text"/>-->
+
+    <!--   <com.google.android.material.bottomnavigation.BottomNavigationView
+           android:layout_width="match_parent"
+           android:layout_height="56sp"
+           android:background="@color/biru_paling_tua"
+           app:itemIconTint="@color/putih"
+           app:labelVisibilityMode="unlabeled"
+           app:menu="@menu/bottom_nav" />
+   -->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_timePicker2"
         android:layout_width="310dp"
@@ -108,18 +128,13 @@
         app:layout_constraintTop_toBottomOf="@+id/textView"
 
         />
-    <!--<EditText
-        android:layout_width="310dp"
-        android:layout_height="48dp"
-        android:id="@+id/Jam"
-        android:background="@drawable/rounded_edit_text"/>-->
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/simpan"
         android:layout_width="105dp"
         android:layout_height="52dp"
         android:layout_marginVertical="41dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/button"
         android:fontFamily="@font/worksans_semibold"
         android:text="Simpan"
@@ -128,12 +143,18 @@
         android:textSize="17sp"
         app:cornerRadius="100dp" />
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="match_parent"
-        android:layout_height="56sp"
-        android:background="@color/biru_paling_tua"
-        app:itemIconTint="@color/putih"
-        app:labelVisibilityMode="unlabeled"
-        app:menu="@menu/bottom_nav" />
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="parent"
+            app:menu="@menu/bottom_nav"
+            android:background="@color/biru_tengah_kedua"
+            app:itemIconTint="@color/white"
+            app:labelVisibilityMode="unlabeled" />
 
-</LinearLayout>
+    </LinearLayout>
+
+</ScrollView>
