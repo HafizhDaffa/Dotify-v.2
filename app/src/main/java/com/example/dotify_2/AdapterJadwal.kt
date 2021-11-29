@@ -17,7 +17,7 @@ class AdapterJadwal(val listJadwal: ArrayList<Jadwal>) : RecyclerView.Adapter<Ad
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.jadwal, parent, false)
         return Holder(view)
     }
-
+//tes
     override fun onBindViewHolder(holder: Holder, position: Int) {
         val jadwal = listJadwal[position]
 
