@@ -1,29 +1,30 @@
 package com.example.dotify_2
 
 
+import android.app.AlarmManager
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.cardview.widget.CardView
-import androidx.core.content.ContextCompat.startActivity
-import androidx.core.content.contentValuesOf
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
-import com.example.dotify_2.CeritanyaDatabase.listPengingat
-import com.google.android.material.button.MaterialButton
+
 
 class AdapterPengingat (val ListPengingat: ArrayList<Pengingat>, val context: Context) : RecyclerView.Adapter<AdapterPengingat.Holder>() {
-
+    val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
+    val intent = Intent(context, AlarmReceiver::class.java)
+    val myDB = DatabaseHandler(context)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val view: View = LayoutInflater.from(parent.context).inflate(R.layout.pengingat, parent, false)
 
         return Holder(view)
     }
-
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onBindViewHolder(holder: Holder, position: Int) {
         val pengingat = ListPengingat[position]
 
@@ -50,6 +51,8 @@ class AdapterPengingat (val ListPengingat: ArrayList<Pengingat>, val context: Co
         Log.i("adapter", position.toString())
 
     }
+
+
 
     override fun getItemCount(): Int {
         return ListPengingat.size

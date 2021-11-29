@@ -1,8 +1,7 @@
 package com.example.dotify_2
 
 import android.annotation.SuppressLint
-import android.app.DatePickerDialog
-import android.app.TimePickerDialog
+import android.app.*
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -27,7 +26,7 @@ class TambahPengingat : AppCompatActivity() {
     var intMYear: Int = 0
     var intMHour: Int = 0
     var intMMinutes: Int = 0
-
+    lateinit var alarmManager: AlarmManager
 
     var tanggal: String = ""
     var jam: String = ""
@@ -48,6 +47,8 @@ class TambahPengingat : AppCompatActivity() {
         val minute = cal.get(Calendar.MINUTE)
         setFullScreen(window)
         lightStatusBar(window)
+
+        createNotificationChannel()
 
         findViewById<MaterialButton>(R.id.btn_timePicker).setOnClickListener {
             val dpd = DatePickerDialog(
@@ -121,12 +122,25 @@ class TambahPengingat : AppCompatActivity() {
                     Pengingat(
                         judul.text.toString(),
                         tanggal,
-                        jam
-                    )
+                        jam,
+
+                        )
                 )
 
-                val intent = Intent(this, PengingatSaya::class.java)
-                startActivity(intent)
+                alarmManager = getSystemService(ALARM_SERVICE) as AlarmManager
+                val intent = Intent(this, AlarmReceiver::class.java)
+                val date = LocalDate.parse(
+                    tanggal,
+                    DateTimeFormatter.ofPattern("yyyy-MM-dd")
+                )
+                val time = SimpleDateFormat("HH:ss").parse(jam)
+
+                val intentToOpen = Intent(this, PengingatSaya::class.java)
+                val pendingIntent =
+                    PendingIntent.getBroadcast(this, time.time.toInt(), intent, 0)
+                alarmManager.setExact(AlarmManager.RTC_WAKEUP, time.time, pendingIntent)
+
+                startActivity(intentToOpen)
             }
         }
 
@@ -154,6 +168,21 @@ class TambahPengingat : AppCompatActivity() {
         }
 
         return true
+    }
+
+    fun createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val name = "dotify"
+            val description = "Yuk dikerjain tugasnya"
+            val importance = NotificationManager.IMPORTANCE_HIGH
+            val channel = NotificationChannel("dotify", name, importance)
+            channel.description = description
+
+            val notificationManager =
+                getSystemService(NotificationManager::class.java)
+
+            notificationManager.createNotificationChannel(channel)
+        }
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
