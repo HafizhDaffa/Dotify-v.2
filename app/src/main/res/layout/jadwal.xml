@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="10dp"
         android:id="@+id/top"
-        android:text="|"
+        android:text=""
         app:layout_constraintBottom_toTopOf="@+id/tanggal"
         app:layout_constraintStart_toStartOf="parent"/>
 
@@ -88,26 +88,14 @@
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:id="@+id/check"
-                android:src="@drawable/check"
-                android:scaleType="fitCenter"
-                android:adjustViewBounds="true"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="14dp"/>
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="10dp"
                 android:id="@+id/trash"
                 android:src="@drawable/trash"
                 android:scaleType="fitCenter"
                 android:adjustViewBounds="true"
-                app:layout_constraintTop_toBottomOf="@id/check"
                 app:layout_constraintBottom_toTopOf="@id/note"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="14dp"/>
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <ImageView
                 android:layout_width="20dp"
@@ -118,7 +106,7 @@
                 android:adjustViewBounds="true"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginBottom="11dp"
+                android:layout_marginBottom="20dp"
                 android:layout_marginEnd="14dp"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
