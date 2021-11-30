@@ -4,21 +4,26 @@ package com.example.dotify_2
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Button
 import com.example.dotify_2.crudJadwal.JadwalSaya
 import com.example.dotify_2.crudJadwal.TambahJadwal
 import com.example.dotify_2.crudJadwal.UbahJadwal
 
 class MainActivity : AppCompatActivity() {
+    private val SPLASH_TIME_OUT:Long = 3000
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
-
         setFullScreen(window)
         lightStatusBar(window)
-        findViewById<Button>(R.id.jadwal_saya).setOnClickListener {
+
+        Handler().postDelayed({
+            startActivity(Intent(this,HalamanUtama::class.java ))
+        },SPLASH_TIME_OUT)
+
+  /*      findViewById<Button>(R.id.jadwal_saya).setOnClickListener {
             var intent: Intent = Intent(this, JadwalSaya::class.java)
             startActivity(intent)
         }
@@ -49,7 +54,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.TipsDanTrik).setOnClickListener {
             var intent: Intent = Intent(this, Tips::class.java)
             startActivity(intent)
-        }
+        }*/
 
 
 
