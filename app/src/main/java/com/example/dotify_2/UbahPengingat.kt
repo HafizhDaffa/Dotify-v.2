@@ -11,6 +11,8 @@ import android.util.Log
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import com.example.dotify_2.crudJadwal.JadwalSaya
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.button.MaterialButton
 import kotlinx.android.synthetic.main.activity_tambah_pengingat.*
 import java.text.SimpleDateFormat
@@ -133,10 +135,28 @@ class UbahPengingat:AppCompatActivity() {
             startActivity(intent)
         }
 
+        findViewById<BottomNavigationItemView>(R.id.itemHome).setOnClickListener {
+            val intent = Intent(this, HalamanUtama::class.java)
+            startActivity(intent)
+        }
+        findViewById<BottomNavigationItemView>(R.id.itemJadwal).setOnClickListener {
+            val intent = Intent(this, JadwalSaya::class.java)
+            startActivity(intent)
+        }
+        findViewById<BottomNavigationItemView>(R.id.itemPengingat).setOnClickListener {
+            val intent = Intent(this, PengingatSaya::class.java)
+            startActivity(intent)
+        }
+        findViewById<BottomNavigationItemView>(R.id.itemTips).setOnClickListener {
+            val intent = Intent(this, Tips::class.java)
+            startActivity(intent)
+        }
+
         findViewById<ImageButton>(R.id.kembali).setOnClickListener {
             val intent = Intent(this, PengingatSaya::class.java)
             startActivity(intent)
         }
+
     }
     fun checkAllField(): Boolean {
 

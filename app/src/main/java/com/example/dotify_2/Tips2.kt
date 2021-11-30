@@ -8,6 +8,8 @@ import android.util.Log
 import android.widget.ImageButton
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.dotify_2.crudJadwal.JadwalSaya
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.button.MaterialButton
 
 class Tips2 : AppCompatActivity() {
@@ -20,6 +22,22 @@ class Tips2 : AppCompatActivity() {
         setFullScreen(window)
         lightStatusBar(window)
 
+        findViewById<BottomNavigationItemView>(R.id.itemHome).setOnClickListener {
+            val intent = Intent(this, HalamanUtama::class.java)
+            startActivity(intent)
+        }
+        findViewById<BottomNavigationItemView>(R.id.itemJadwal).setOnClickListener {
+            val intent = Intent(this, JadwalSaya::class.java)
+            startActivity(intent)
+        }
+        findViewById<BottomNavigationItemView>(R.id.itemPengingat).setOnClickListener {
+            val intent = Intent(this, PengingatSaya::class.java)
+            startActivity(intent)
+        }
+        findViewById<BottomNavigationItemView>(R.id.itemTips).setOnClickListener {
+            val intent = Intent(this, Tips::class.java)
+            startActivity(intent)
+        }
         findViewById<ImageButton>(R.id.kembali).setOnClickListener {
             val intent = Intent(this, Tips::class.java)
             startActivity(intent)

@@ -9,6 +9,9 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dotify_2.*
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.button.MaterialButton
 
 class JadwalSaya : AppCompatActivity() {
@@ -38,6 +41,22 @@ class JadwalSaya : AppCompatActivity() {
             startActivity(intent)
         }
 
+        findViewById<BottomNavigationItemView>(R.id.itemHome).setOnClickListener {
+            val intent = Intent(this, HalamanUtama::class.java)
+            startActivity(intent)
+        }
+        findViewById<BottomNavigationItemView>(R.id.itemJadwal).setOnClickListener {
+            val intent = Intent(this, JadwalSaya::class.java)
+            startActivity(intent)
+        }
+        findViewById<BottomNavigationItemView>(R.id.itemPengingat).setOnClickListener {
+            val intent = Intent(this, PengingatSaya::class.java)
+            startActivity(intent)
+        }
+        findViewById<BottomNavigationItemView>(R.id.itemTips).setOnClickListener {
+            val intent = Intent(this, Tips::class.java)
+            startActivity(intent)
+        }
         findViewById<ImageButton>(R.id.kembali).setOnClickListener {
             val intent = Intent(this, HalamanUtama::class.java)
             startActivity(intent)

@@ -58,6 +58,7 @@
         android:layout_width="310dp"
         android:layout_height="48dp"
         android:id="@+id/NamaTugas"
+        android:textAlignment="center"
         android:background="@drawable/rounded_edit_text"/>
 
     <TextView
@@ -124,6 +125,7 @@
         android:layout_width="310dp"
         android:layout_height="48dp"
         android:id="@+id/Catatan"
+        android:textAlignment="center"
         android:background="@drawable/rounded_edit_text"/>
 
     <TextView

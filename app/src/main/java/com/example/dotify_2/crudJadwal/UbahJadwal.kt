@@ -13,9 +13,8 @@ import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
-import com.example.dotify_2.R
-import com.example.dotify_2.lightStatusBar
-import com.example.dotify_2.setFullScreen
+import com.example.dotify_2.*
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.button.MaterialButton
 import kotlinx.android.synthetic.main.activity_ubah_jadwal.*
 import java.text.SimpleDateFormat
@@ -148,6 +147,23 @@ class UbahJadwal : AppCompatActivity() {
                 startActivity(intent)
             }
             val intent = Intent(this, JadwalSaya::class.java)
+            startActivity(intent)
+        }
+
+        findViewById<BottomNavigationItemView>(R.id.itemHome).setOnClickListener {
+            val intent = Intent(this, HalamanUtama::class.java)
+            startActivity(intent)
+        }
+        findViewById<BottomNavigationItemView>(R.id.itemJadwal).setOnClickListener {
+            val intent = Intent(this, JadwalSaya::class.java)
+            startActivity(intent)
+        }
+        findViewById<BottomNavigationItemView>(R.id.itemPengingat).setOnClickListener {
+            val intent = Intent(this, PengingatSaya::class.java)
+            startActivity(intent)
+        }
+        findViewById<BottomNavigationItemView>(R.id.itemTips).setOnClickListener {
+            val intent = Intent(this, Tips::class.java)
             startActivity(intent)
         }
 

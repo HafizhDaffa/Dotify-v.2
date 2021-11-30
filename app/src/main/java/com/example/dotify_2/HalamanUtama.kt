@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.example.dotify_2.crudJadwal.JadwalSaya
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import com.google.android.material.button.MaterialButton
 
 class HalamanUtama: AppCompatActivity() {
@@ -25,6 +26,22 @@ class HalamanUtama: AppCompatActivity() {
             startActivity(intent)
         }
         findViewById<MaterialButton>(R.id.TipsDanTrik).setOnClickListener {
+            val intent = Intent(this, Tips::class.java)
+            startActivity(intent)
+        }
+        findViewById<BottomNavigationItemView>(R.id.itemHome).setOnClickListener {
+            val intent = Intent(this, HalamanUtama::class.java)
+            startActivity(intent)
+        }
+        findViewById<BottomNavigationItemView>(R.id.itemJadwal).setOnClickListener {
+            val intent = Intent(this, JadwalSaya::class.java)
+            startActivity(intent)
+        }
+        findViewById<BottomNavigationItemView>(R.id.itemPengingat).setOnClickListener {
+            val intent = Intent(this, PengingatSaya::class.java)
+            startActivity(intent)
+        }
+        findViewById<BottomNavigationItemView>(R.id.itemTips).setOnClickListener {
             val intent = Intent(this, Tips::class.java)
             startActivity(intent)
         }
