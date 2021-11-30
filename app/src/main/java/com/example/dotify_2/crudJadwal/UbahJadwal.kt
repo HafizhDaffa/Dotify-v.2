@@ -95,21 +95,6 @@ class UbahJadwal : AppCompatActivity() {
             dpd.show()
         }
 
-        findViewById<MaterialButton>(R.id.btn_timePicker2).setOnClickListener{
-            val cal = Calendar.getInstance()
-
-            val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
-                cal.set(Calendar.HOUR_OF_DAY, hour)
-                cal.set(Calendar.MINUTE, minute)
-                btn_timePicker2.text = SimpleDateFormat("HH:mm").format(cal.time)
-
-            }
-            intMHour = Calendar.HOUR_OF_DAY
-            intMMinutes = Calendar.MINUTE
-
-            jam = "$intMHour : $intMMinutes"
-            TimePickerDialog(this, timeSetListener, cal.get(Calendar.HOUR_OF_DAY), cal.get(Calendar.MINUTE), true).show()
-        }
 
         findViewById<MaterialButton>(R.id.btn_timePicker3).setOnClickListener{
             val cal = Calendar.getInstance()

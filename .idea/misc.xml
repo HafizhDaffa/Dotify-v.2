@@ -28,6 +28,13 @@
         <entry key="..\:/Users/hafiz/AndroidStudioProjects/Dotify2/app/src/main/res/layout/tips.xml" value="0.33" />
         <entry key="..\:/Users/hafiz/AndroidStudioProjects/Dotify2/app/src/main/res/menu/bottom_nav.xml" value="0.3625" />
         <entry key="..\:/Users/hafiz/AndroidStudioProjects/Dotify2/app/src/main/res/mipmap-anydpi-v26/ic_logo_round.xml" value="0.37395833333333334" />
+        <entry key="app/src/main/res/layout/activity_halaman_utama.xml" value="0.3546875" />
+        <entry key="app/src/main/res/layout/activity_jadwal_saya.xml" value="0.27445652173913043" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3546875" />
+        <entry key="app/src/main/res/layout/activity_pengingat_saya.xml" value="0.27445652173913043" />
+        <entry key="app/src/main/res/layout/activity_tambah_jadwal.xml" value="0.3546875" />
+        <entry key="app/src/main/res/layout/activity_ubah_jadwal.xml" value="0.2105978260869565" />
+        <entry key="app/src/main/res/layout/jadwal.xml" value="0.27445652173913043" />
       </map>
     </option>
   </component>

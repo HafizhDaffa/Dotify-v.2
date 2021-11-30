@@ -85,37 +85,6 @@ class TambahJadwal : AppCompatActivity() {
             dpd.show()
         }
 
-        findViewById<MaterialButton>(R.id.btn_timePicker2).setOnClickListener {
-            val cal = Calendar.getInstance()
-
-            val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
-                cal.set(Calendar.HOUR_OF_DAY, hour)
-                cal.set(Calendar.MINUTE, minute)
-                btn_timePicker2.text = SimpleDateFormat("HH:mm").format(cal.time)
-
-                var strMHour = hour.toString()
-                var strMMinutes = minute.toString()
-
-                if (hour < 10) {
-                    strMHour = "0" + strMHour
-                }
-
-                if (minute < 10) {
-                    strMMinutes = "0" + strMMinutes
-                }
-
-                jam = "$strMHour:$strMMinutes"
-            }
-
-
-            TimePickerDialog(
-                this,
-                timeSetListener,
-                cal.get(Calendar.HOUR_OF_DAY),
-                cal.get(Calendar.MINUTE),
-                true
-            ).show()
-        }
 
         findViewById<MaterialButton>(R.id.btn_timePicker3).setOnClickListener {
             val cal = Calendar.getInstance()
